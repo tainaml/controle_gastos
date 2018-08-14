@@ -8,10 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h2> Listagem </h2>
-    {% for t in transaction %}
-        <li>{{t.descricao}} - {{t.data}} - {{ t.valor }}</li>
-    {% endfor %}
-
+    <h2>Tela de  Listagem </h2>
+    {% for transacao in categorias %}
+    <li> {{transacao.nome}} - {{transacao.dt_criacao}} </li>
+        {% endfor %}
+    <h3></h3>
 </body>
 </html>

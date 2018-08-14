@@ -1,19 +1,25 @@
 from django.shortcuts import render
-from .models import Transacao
+from .models import Transacao, Categoria
+import datetime
 
-
-# Create your views here.
 
 def home(request):
-    data = {}
-    data['transacoes'] = ['t1','t2','t3']
+    cat_names = {}
+    cat_names['categoria'] = Categoria.objects.all()
+    return render(request, 'contas/home.html', cat_names)
 
-    return render(request,'contas/home.html',data)
+
+
 
 def listagem(request):
     data = {}
-    data['transaction'] = Transacao.objects.all()
-    return render(request,'contas/listagem.html', data)
+    x = {}
+    data['transacoes'] = Transacao.objects.all()
+    x['categorias'] = Categoria.objects.all()
+
+    return render(request,'contas/listagem.html', x)
+
+
 
 
 

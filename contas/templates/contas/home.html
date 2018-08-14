@@ -8,7 +8,10 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>fghfhfg</h1>
-
-
+    <h1>{{ categoria }}</h1>
+{% if "Viagens" in categoria %}
+     <b> {{categoria}} </b>
+    {% else %}
+        <li> {{categoria}}</li>
+         {% endfor %}
 </body>
